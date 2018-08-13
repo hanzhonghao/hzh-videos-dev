@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev.iml" filepath="$PROJECT_DIR$/hzh-videos-dev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev-common/hzh-videos-dev-common.iml" filepath="$PROJECT_DIR$/hzh-videos-dev-common/hzh-videos-dev-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev-mappers/hzh-videos-dev-mappers.iml" filepath="$PROJECT_DIR$/hzh-videos-dev-mappers/hzh-videos-dev-mappers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev-mini-api/hzh-videos-dev-mini-api.iml" filepath="$PROJECT_DIR$/hzh-videos-dev-mini-api/hzh-videos-dev-mini-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev-pojo/hzh-videos-dev-pojo.iml" filepath="$PROJECT_DIR$/hzh-videos-dev-pojo/hzh-videos-dev-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hzh-videos-dev-service/hzh-videos-dev-service.iml" filepath="$PROJECT_DIR$/hzh-videos-dev-service/hzh-videos-dev-service.iml" />
+    </modules>
+  </component>
+</project>
