@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by 小豪 on 2018/6/21.
  */
 @RestController
-@Api(value = "用户注册登录的接口",tags = {"注册和登录的controller"})
+@Api(value = "用户注册登录的接口",tags = {"注册和登录的controller"}) //Swagger2用到的
 public class RegistLoginController {
 
     @Autowired
@@ -45,7 +45,8 @@ public class RegistLoginController {
             return IMoocJSONResult.errorMsg("用户名密码已经存在，请换一个再试试");
         }
 //        userService.saveUser(user);
-        return IMoocJSONResult.ok();
+        user.setPassword("");
+        return IMoocJSONResult.ok(user);
     }
 
     @ApiOperation(value="用户登录", notes="用户登录的接口")
