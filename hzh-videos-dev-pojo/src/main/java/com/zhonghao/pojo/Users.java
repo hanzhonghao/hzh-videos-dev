@@ -4,56 +4,75 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
-@ApiModel(value = "用户对象",description = "这是用户对象")
+@ApiModel(value="用户对象", description="这是用户对象")
 public class Users {
-    @ApiModelProperty(hidden = true)
+
+    @ApiModelProperty(hidden=true)
     @Id
     private String id;
 
     /**
      * 用户名
      */
-    @ApiModelProperty(value = "用户名",name = "username",example = "zhonghaouser",required = true)
+    @ApiModelProperty(value="用户名", name="username", example="imoocuser", required=true)
     private String username;
 
     /**
      * 密码
      */
-    @ApiModelProperty(value = "密码",name = "password",example = "123456",required = true)
+    @ApiModelProperty(value="密码", name="password", example="123456", required=true)
     private String password;
 
     /**
      * 我的头像，如果没有默认给一张
      */
-    @ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden=true)
     @Column(name = "face_image")
     private String faceImage;
 
     /**
      * 昵称
      */
+    @ApiModelProperty(hidden=true)
     private String nickname;
 
     /**
      * 我的粉丝数量
      */
-    @ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden=true)
     @Column(name = "fans_counts")
     private Integer fansCounts;
 
     /**
      * 我关注的人总数
      */
-    @ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden=true)
     @Column(name = "follow_counts")
     private Integer followCounts;
 
     /**
      * 我接受到的赞美/收藏 的数量
      */
-    @ApiModelProperty(hidden = true)
+    @ApiModelProperty(hidden=true)
     @Column(name = "receive_like_counts")
     private Integer receiveLikeCounts;
+
+    public Users() {
+        super();
+    }
+
+    public Users(String id, String username, String password, String faceImage, String nickname, Integer fansCounts,
+                 Integer followCounts, Integer receiveLikeCounts) {
+        super();
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.faceImage = faceImage;
+        this.nickname = nickname;
+        this.fansCounts = fansCounts;
+        this.followCounts = followCounts;
+        this.receiveLikeCounts = receiveLikeCounts;
+    }
 
     /**
      * @return id
@@ -194,4 +213,5 @@ public class Users {
     public void setReceiveLikeCounts(Integer receiveLikeCounts) {
         this.receiveLikeCounts = receiveLikeCounts;
     }
+
 }

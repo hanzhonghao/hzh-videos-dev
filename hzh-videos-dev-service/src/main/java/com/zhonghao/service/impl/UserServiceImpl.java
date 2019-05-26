@@ -1,7 +1,8 @@
-package com.zhonghao.service;
+package com.zhonghao.service.impl;
 
 import com.zhonghao.mapper.UsersMapper;
 import com.zhonghao.pojo.Users;
+import com.zhonghao.service.UserService;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,5 +53,24 @@ public class UserServiceImpl implements UserService {
         Users result = usersMapper.selectOneByExample(userExample);
 
         return result;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public void updateUserInfo(Users user) {
+        Example userExample = new Example(Users.class);
+        Criteria criteria = userExample.createCriteria();
+        criteria.andEqualTo("id",user.getId());
+        usersMapper.updateByExampleSelective(user,userExample);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public Users queryUserInfo(String userId) {
+        Example userExample = new Example(Users.class);
+        Criteria criteria = userExample.createCriteria();
+        criteria.andEqualTo("id", userId);
+        Users user = usersMapper.selectOneByExample(userExample);
+        return user;
     }
 }
